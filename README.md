@@ -1,59 +1,178 @@
 # Laravel Auth Breeze
 
-## Deskripsi
-Proyek ini merupakan implementasi sistem autentikasi menggunakan Laravel 12 dan Laravel Breeze sebagai starter kit autentikasi.
+## 📌 Deskripsi Proyek
 
-## Fitur
-- Register dengan field Nama, Email, No. HP, Password
-- Login & Logout
-- Edit Profil (Nama, Email, No. HP)
-- Halaman Admin dengan daftar semua user
-- Middleware AdminMiddleware untuk proteksi halaman admin
+Laravel Auth Breeze adalah aplikasi autentikasi sederhana yang dibangun menggunakan **Laravel 12** dan **Laravel Breeze (Blade Stack)**. Proyek ini dibuat sebagai implementasi sistem login dan manajemen pengguna dengan fitur role-based access control (Admin & User).
 
-## Teknologi
-- Laravel 12
-- Laravel Breeze (Blade Stack)
-- MySQL
-- Tailwind CSS
+Aplikasi memungkinkan pengguna untuk melakukan registrasi, login, mengelola profil, serta menyediakan halaman khusus admin untuk melihat seluruh data pengguna yang terdaftar.
 
-## Cara Install
+---
+
+## ✨ Fitur Utama
+
+### Authentication
+
+- Registrasi akun
+- Login pengguna
+- Logout pengguna
+- Validasi form autentikasi
+
+### Profile Management
+
+- Edit nama
+- Edit email
+- Edit nomor HP
+- Ubah password
+
+### Admin Panel
+
+- Melihat daftar seluruh user
+- Proteksi halaman admin menggunakan middleware
+- Role management (Admin & User)
+
+### Security
+
+- Middleware Authentication
+- Middleware Admin
+- Password Hashing Laravel
+- CSRF Protection
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+| Teknologi      | Keterangan                 |
+| -------------- | -------------------------- |
+| Laravel 12     | Framework PHP              |
+| Laravel Breeze | Starter Kit Authentication |
+| Blade          | Template Engine            |
+| MySQL          | Database                   |
+| Tailwind CSS   | Styling Framework          |
+| Vite           | Asset Bundler              |
+
+---
+
+## 📂 Struktur Fitur
+
+```text
+├── Authentication
+│   ├── Register
+│   ├── Login
+│   └── Logout
+│
+├── Profile
+│   ├── Edit Profile
+│   ├── Update Email
+│   └── Update Phone Number
+│
+└── Admin
+    ├── User List
+    └── Admin Middleware
+```
+
+---
+
+## 🚀 Instalasi Project
 
 ### 1. Clone Repository
+
+```bash
 git clone https://github.com/habibiputrar/laravel-auth-breeze.git
 cd laravel-auth-breeze
+```
 
-### 2. Install Dependencies
+### 2. Install Dependency
+
+```bash
 composer install
 npm install
+```
 
-### 3. Setup Environment
+### 3. Konfigurasi Environment
+
+Salin file environment:
+
+```bash
 cp .env.example .env
+```
+
+Generate application key:
+
+```bash
 php artisan key:generate
+```
+
+---
 
 ### 4. Konfigurasi Database
-Edit file .env:
+
+Buka file `.env` lalu sesuaikan konfigurasi database:
+
+```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=auth_demo
 DB_USERNAME=root
 DB_PASSWORD=
+```
 
-### 5. Migrasi Database
+Pastikan database `auth_demo` sudah dibuat terlebih dahulu di MySQL.
+
+---
+
+### 5. Jalankan Migration
+
+```bash
 php artisan migrate
+```
 
-### 6. Jalankan Aplikasi
+---
+
+### 6. Build Asset Frontend
+
+```bash
 npm run dev
+```
+
+---
+
+### 7. Menjalankan Aplikasi
+
+```bash
 php artisan serve
+```
 
-Akses di http://localhost:8000
+Aplikasi dapat diakses melalui:
 
-## Set Role Admin
+```text
+http://localhost:8000
+```
+
+---
+
+## 👨‍💼 Mengatur User Menjadi Admin
+
+Masuk ke Laravel Tinker:
+
+```bash
 php artisan tinker
-User::where('email', 'email@example.com')->update(['role' => 'admin']);
+```
 
-## Developer
-- Nama: Habibi Putra
-- NIM: 2411531001
-- Mata Kuliah: Pemrograman Web
-- Universitas Andalas
+Kemudian jalankan:
+
+```php
+User::where('email', 'email@example.com')
+    ->update(['role' => 'admin']);
+```
+
+Ganti `email@example.com` dengan email pengguna yang ingin dijadikan admin.
+
+---
+
+**Habibi Putra Rizqullah**
+NIM: 2411531001
+Program Studi Sistem Informasi
+Universitas Andalas
+
+
