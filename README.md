@@ -172,7 +172,7 @@ Ganti `email@example.com` dengan email pengguna yang ingin dijadikan admin.
 
 **Habibi Putra Rizqullah**
 NIM: 2411531001
-Program Studi Sistem Informasi
+Program Studi Informatika
 Universitas Andalas
 
 
