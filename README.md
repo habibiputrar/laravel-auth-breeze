@@ -151,7 +151,7 @@ http://localhost:8000
 
 ---
 
-## 👨‍💼 Mengatur User Menjadi Admin
+## Mengatur User Menjadi Admin
 
 Masuk ke Laravel Tinker:
 
